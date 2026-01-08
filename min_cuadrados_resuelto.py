@@ -53,7 +53,6 @@ ys1 = [
     0.7117, 3.4185, 12.1767, 24.9167, 44.2495
 ]
 
-
 a2, a1, a0 = ajustar_min_cuadrados(xs1, ys1, gradiente=[
     der_parcial_q2,
     der_parcial_q1,
@@ -69,6 +68,10 @@ plt.xlabel("x")
 plt.ylabel("y")
 plt.title("Conjunto de datos 1 - Ajuste cuadrático")
 plt.show()
+
+print(a2, a1, a0)
+print(a2*2.25**2 + a1*2.25 + a0)
+print(a2*(-2.25)**2 + a1*(-2.25) + a0)
 
 
 def der_parcial_e1(xs, ys):
@@ -109,7 +112,6 @@ ys2 = [
     5.8088, 10.5890, 11.5865, 11.8221, 26.5077
 ]
 
-
 a, b = ajustar_min_cuadrados(xs2, ys2, gradiente=[
     der_parcial_e1,
     der_parcial_e0
@@ -124,3 +126,8 @@ plt.xlabel("x")
 plt.ylabel("y")
 plt.title("Conjunto de datos 2 - Ajuste exponencial")
 plt.show()
+
+print(a, b)
+print(a * math.exp(b * 1))
+print(a * math.exp(b * 5))
+
